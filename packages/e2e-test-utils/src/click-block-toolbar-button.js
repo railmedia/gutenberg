@@ -11,6 +11,12 @@ export async function clickBlockToolbarButton( buttonAriaLabel ) {
 		await page.mouse.move( 0, 0 );
 		await page.mouse.move( 10, 10 );
 	}
+
+	// Hover the block switcher to show the movers
+	await page.hover(
+		'.block-editor-block-toolbar .block-editor-block-switcher'
+	);
+
 	await page.waitForSelector( BUTTON_SELECTOR );
 	await page.click( BUTTON_SELECTOR );
 }
